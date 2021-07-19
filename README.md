@@ -10,6 +10,12 @@ Clone this repository and install its dependencies with `yarn install` or `npm i
 NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
 ```
 
+The application can be run via `npm run dev`:
+
+```
+npm run dev
+```
+
 > Note: Currently, for this example, we recommend using `localhost` during local development to avoid "Same-Origin" issues.
 
 ## Usage
