@@ -10,7 +10,10 @@ import GuestLayout from '@/components/Layouts/GuestLayout'
 import AuthValidationErrors from '@/components/AuthValidationErrors'
 
 const Register = () => {
-    const { register } = useAuth({ middleware: 'guest' })
+    const { register } = useAuth({
+        middleware: 'guest',
+        redirectToDashboardIfAuthenticated: true,
+    })
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
