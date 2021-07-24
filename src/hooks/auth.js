@@ -3,7 +3,7 @@ import axios from '@/lib/axios'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-export const useAuth = ({ middleware, redirectToDashboardIfAuthenticated } = {}) => {
+export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const router = useRouter()
 
     const { data: user, error, revalidate } = useSWR('/api/user', () =>
@@ -87,7 +87,7 @@ export const useAuth = ({ middleware, redirectToDashboardIfAuthenticated } = {})
     }
 
     useEffect(() => {
-        if (middleware == 'guest' && redirectToDashboardIfAuthenticated && user) router.push('/dashboard')
+        if (middleware == 'guest' && redirectIfAuthenticated && user) router.push(redirectIfAuthenticated)
         if (middleware == 'auth' && error) logout()
     }, [user, error])
 

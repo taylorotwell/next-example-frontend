@@ -13,9 +13,9 @@ import AuthValidationErrors from '@/components/AuthValidationErrors'
 const Login = () => {
     const { login } = useAuth({
         middleware: 'guest',
-        redirectToDashboardIfAuthenticated: true,
+        redirectIfAuthenticated: '/dashboard',
     })
-    
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])

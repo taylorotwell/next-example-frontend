@@ -12,7 +12,7 @@ import AuthValidationErrors from '@/components/AuthValidationErrors'
 const Register = () => {
     const { register } = useAuth({
         middleware: 'guest',
-        redirectToDashboardIfAuthenticated: true,
+        redirectIfAuthenticated: '/dashboard',
     })
 
     const [name, setName] = useState('')
