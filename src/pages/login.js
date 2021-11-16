@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import { useState } from 'react'
 import Input from '@/components/Input'
 import Label from '@/components/Label'
 import { useAuth } from '@/hooks/auth'
+import { useRouter } from 'next/router'
 import Button from '@/components/Button'
+import { useEffect, useState } from 'react'
 import AuthCard from '@/components/AuthCard'
 import GuestLayout from '@/components/Layouts/GuestLayout'
 import ApplicationLogo from '@/components/ApplicationLogo'
@@ -11,6 +12,8 @@ import AuthSessionStatus from '@/components/AuthSessionStatus'
 import AuthValidationErrors from '@/components/AuthValidationErrors'
 
 const Login = () => {
+    const router = useRouter()
+
     const { login } = useAuth({
         middleware: 'guest',
         redirectIfAuthenticated: '/dashboard',
@@ -19,11 +22,20 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
+    const [status, setStatus] = useState(null)
+
+    useEffect(() => {
+        if (router.query.reset === '1' && errors.length == 0) {
+            setStatus('Your password has been reset!')
+        } else {
+            setStatus(null)
+        }
+    })
 
     const submitForm = async event => {
         event.preventDefault()
 
-        login({ email, password, setErrors })
+        login({ email, password, setErrors, setStatus })
     }
 
     return (
@@ -38,7 +50,7 @@ const Login = () => {
                 }>
 
                 {/* Session Status */}
-                <AuthSessionStatus className="mb-4" status={null} />
+                <AuthSessionStatus className="mb-4" status={status} />
 
                 {/* Validation Errors */}
                 <AuthValidationErrors className="mb-4" errors={errors} />

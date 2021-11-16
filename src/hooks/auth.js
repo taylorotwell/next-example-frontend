@@ -34,9 +34,10 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             })
     }
 
-    const login = async ({ setErrors, ...props }) => {
+    const login = async ({ setErrors, setStatus, ...props }) => {
         await csrf()
 
+        setStatus(null)
         setErrors([])
 
         axios
@@ -75,8 +76,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
         axios
             .post('/reset-password', { token: router.query.token, ...props })
-            .then(response => {
-                setStatus(response.data.status)
+            .then(() => {
+                router.push('/login?password-reset=1')
             })
             .catch(error => {
                 if (error.response.status != 422) throw error
