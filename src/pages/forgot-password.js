@@ -12,6 +12,7 @@ import { useState } from 'react'
 
 const ForgotPassword = () => {
     const { forgotPassword } = useAuth({ middleware: 'guest' })
+
     const [email, setEmail] = useState('')
     const [errors, setErrors] = useState([])
     const [status, setStatus] = useState(null)
