@@ -1,14 +1,12 @@
+import ApplicationLogo from '@/components/ApplicationLogo'
+import Dropdown from '@/components/Dropdown'
 import Link from 'next/link'
-import { useState } from 'react'
+import NavLink from '@/components/NavLink'
+import ResponsiveNavLink, { ResponsiveNavButton } from '@/components/ResponsiveNavLink'
+import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { useRouter } from 'next/router'
-import NavLink from '@/components/NavLink'
-import Dropdown from '@/components/Dropdown'
-import ApplicationLogo from '@/components/ApplicationLogo'
-import { DropdownButton } from '@/components/DropdownLink'
-import ResponsiveNavLink, {
-    ResponsiveNavButton,
-} from '@/components/ResponsiveNavLink'
+import { useState } from 'react'
 
 const Navigation = ({ user }) => {
     const router = useRouter()
@@ -109,7 +107,7 @@ const Navigation = ({ user }) => {
                 <div className="block sm:hidden">
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
-                            href="/dashboard'"
+                            href="/dashboard"
                             active={router.pathname == '/dashboard'}>
                             Dashboard
                         </ResponsiveNavLink>

@@ -1,4 +1,5 @@
 import AppLayout from '@/components/Layouts/AppLayout'
+import Head from 'next/head'
 
 const Dashboard = () => {
     return (
@@ -8,6 +9,10 @@ const Dashboard = () => {
                     Dashboard
                 </h2>
             }>
+
+            <Head>
+                <title>Laravel - Dashboard</title>
+            </Head>
 
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
