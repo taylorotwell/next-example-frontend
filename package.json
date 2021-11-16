@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@headlessui/react": "^0.2.0",
+    "@headlessui/react": "^1.4.2",
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.1.0",
     "axios": "^0.21.1",
