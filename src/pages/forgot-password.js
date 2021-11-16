@@ -1,14 +1,14 @@
-import Link from 'next/link'
-import { useState } from 'react'
-import { useAuth } from '@/hooks/auth'
-import Label from '@/components/Label'
-import Input from '@/components/Input'
-import Button from '@/components/Button'
-import AuthCard from '@/components/AuthCard'
 import ApplicationLogo from '@/components/ApplicationLogo'
-import GuestLayout from '@/components/Layouts/GuestLayout'
+import AuthCard from '@/components/AuthCard'
 import AuthSessionStatus from '@/components/AuthSessionStatus'
 import AuthValidationErrors from '@/components/AuthValidationErrors'
+import Button from '@/components/Button'
+import GuestLayout from '@/components/Layouts/GuestLayout'
+import Input from '@/components/Input'
+import Label from '@/components/Label'
+import Link from 'next/link'
+import { useAuth } from '@/hooks/auth'
+import { useState } from 'react'
 
 const ForgotPassword = () => {
     const { forgotPassword } = useAuth({ middleware: 'guest' })

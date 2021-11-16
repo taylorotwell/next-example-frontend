@@ -1,19 +1,21 @@
-import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
-import Label from '@/components/Label'
-import Input from '@/components/Input'
-import { useRouter } from 'next/router'
-import Button from '@/components/Button'
-import { useEffect, useState } from 'react'
-import AuthCard from '@/components/AuthCard'
 import ApplicationLogo from '@/components/ApplicationLogo'
-import GuestLayout from '@/components/Layouts/GuestLayout'
+import AuthCard from '@/components/AuthCard'
 import AuthSessionStatus from '@/components/AuthSessionStatus'
 import AuthValidationErrors from '@/components/AuthValidationErrors'
+import Button from '@/components/Button'
+import GuestLayout from '@/components/Layouts/GuestLayout'
+import Input from '@/components/Input'
+import Label from '@/components/Label'
+import Link from 'next/link'
+import { useAuth } from '@/hooks/auth'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 const PasswordReset = () => {
     const router = useRouter()
+
     const { resetPassword } = useAuth({ middleware: 'guest' })
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [password_confirmation, setPasswordConfirmation] = useState('')
