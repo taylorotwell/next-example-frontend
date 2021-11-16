@@ -32,6 +32,7 @@ const ForgotPassword = () => {
                         </a>
                     </Link>
                 }>
+
                 <div className="mb-4 text-sm text-gray-600">
                     Forgot your password? No problem. Just let us know your
                     email address and we will email you a password reset link
@@ -59,6 +60,7 @@ const ForgotPassword = () => {
                             autoFocus
                         />
                     </div>
+
                     <div className="flex items-center justify-end mt-4">
                         <Button>Email Password Reset Link</Button>
                     </div>
