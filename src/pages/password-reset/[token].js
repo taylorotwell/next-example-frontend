@@ -24,11 +24,11 @@ const PasswordReset = () => {
         event.preventDefault()
 
         resetPassword({
-            setStatus,
-            setErrors,
             email,
             password,
             password_confirmation,
+            setErrors,
+            setStatus,
         })
     }
 

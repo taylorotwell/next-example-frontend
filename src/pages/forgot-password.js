@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     const submitForm = event => {
         event.preventDefault()
 
-        forgotPassword({ setErrors, setStatus, email })
+        forgotPassword({ email, setErrors, setStatus })
     }
 
     return (
