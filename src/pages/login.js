@@ -25,8 +25,8 @@ const Login = () => {
     const [status, setStatus] = useState(null)
 
     useEffect(() => {
-        if (router.query.reset === '1' && errors.length == 0) {
-            setStatus('Your password has been reset!')
+        if (router.query.reset?.length > 0 && errors.length == 0) {
+            setStatus(atob(router.query.reset))
         } else {
             setStatus(null)
         }
