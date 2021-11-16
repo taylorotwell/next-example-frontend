@@ -26,12 +26,12 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
         axios
             .post('/register', props)
+            .then(() => revalidate())
             .catch(error => {
                 if (error.response.status != 422) throw error
 
                 setErrors(Object.values(error.response.data.errors).flat())
             })
-            .then(() => revalidate())
     }
 
     const login = async ({ setErrors, ...props }) => {
@@ -41,17 +41,18 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
         axios
             .post('/login', props)
+            .then(() => revalidate())
             .catch(error => {
                 if (error.response.status != 422) throw error
 
                 setErrors(Object.values(error.response.data.errors).flat())
             })
-            .then(() => revalidate())
     }
 
     const forgotPassword = async ({ setErrors, setStatus, email }) => {
         await csrf()
 
+        setStatus(null)
         setErrors([])
 
         axios
@@ -69,6 +70,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const resetPassword = async ({ setErrors, setStatus, ...props }) => {
         await csrf()
 
+        setStatus(null)
         setErrors([])
 
         axios
