@@ -46,6 +46,7 @@ const PasswordReset = () => {
                         </a>
                     </Link>
                 }>
+
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
 
@@ -56,6 +57,7 @@ const PasswordReset = () => {
                     {/* Email Address */}
                     <div>
                         <Label htmlFor="email">Email</Label>
+
                         <Input
                             id="email"
                             className="block mt-1 w-full"
@@ -66,6 +68,7 @@ const PasswordReset = () => {
                             autoFocus
                         />
                     </div>
+
                     {/* Password */}
                     <div className="mt-4">
                         <Label htmlFor="password">Password</Label>
@@ -78,11 +81,13 @@ const PasswordReset = () => {
                             required
                         />
                     </div>
+
                     {/* Confirm Password */}
                     <div className="mt-4">
                         <Label htmlFor="password_confirmation">
                             Confirm Password
                         </Label>
+
                         <Input
                             id="password_confirmation"
                             className="block mt-1 w-full"
@@ -94,6 +99,7 @@ const PasswordReset = () => {
                             required
                         />
                     </div>
+
                     <div className="flex items-center justify-end mt-4">
                         <Button>Reset Password</Button>
                     </div>

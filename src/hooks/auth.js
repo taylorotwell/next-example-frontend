@@ -22,12 +22,14 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const register = async ({ setErrors, ...props }) => {
         await csrf()
 
+        setErrors([])
+
         axios
             .post('/register', props)
             .catch(error => {
                 if (error.response.status != 422) throw error
 
-                setErrors(Object.values(error.response.data.errors))
+                setErrors(Object.values(error.response.data.errors).flat())
             })
             .then(() => revalidate())
     }
@@ -35,12 +37,14 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const login = async ({ setErrors, ...props }) => {
         await csrf()
 
+        setErrors([])
+
         axios
             .post('/login', props)
             .catch(error => {
                 if (error.response.status != 422) throw error
 
-                setErrors(Object.values(error.response.data.errors))
+                setErrors(Object.values(error.response.data.errors).flat())
             })
             .then(() => revalidate())
     }
@@ -48,27 +52,35 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const forgotPassword = async ({ setErrors, setStatus, email }) => {
         await csrf()
 
+        setErrors([])
+
         axios
             .post('/forgot-password', { email })
+            .then(response => {
+                setStatus(response.data.status)
+            })
             .catch(error => {
                 if (error.response.status != 422) throw error
 
-                setErrors(Object.values(error.response.data.errors))
+                setErrors(Object.values(error.response.data.errors).flat())
             })
-            .then(response => setStatus(response.data.status))
     }
 
     const resetPassword = async ({ setErrors, setStatus, ...props }) => {
         await csrf()
 
+        setErrors([])
+
         axios
             .post('/reset-password', { token: router.query.token, ...props })
+            .then(response => {
+                setStatus(response.data.status)
+            })
             .catch(error => {
                 if (error.response.status != 422) throw error
 
-                setErrors(Object.values(error.response.data.errors))
+                setErrors(Object.values(error.response.data.errors).flat())
             })
-            .then(response => setStatus(response.data.status))
     }
 
     const resendEmailVerification = ({ setStatus }) => {
