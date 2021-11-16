@@ -51,11 +51,11 @@ const ForgotPassword = () => {
                         <Label htmlFor="email">Email</Label>
                         <Input
                             id="email"
-                            className="block mt-1 w-full"
                             type="email"
                             name="email"
-                            onChange={event => setEmail(event.target.value)}
                             value={email}
+                            className="block mt-1 w-full"
+                            onChange={event => setEmail(event.target.value)}
                             required
                             autoFocus
                         />

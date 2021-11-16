@@ -46,8 +46,8 @@ const VerifyEmail = () => {
 
                     <button
                         type="button"
-                        onClick={logout}
-                        className="underline text-sm text-gray-600 hover:text-gray-900">
+                        className="underline text-sm text-gray-600 hover:text-gray-900"
+                        onClick={logout}>
                         Logout
                     </button>
                 </div>

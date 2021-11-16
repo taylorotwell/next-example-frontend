@@ -62,10 +62,10 @@ const Login = () => {
 
                         <Input
                             id="email"
-                            className="block mt-1 w-full"
                             type="email"
-                            onChange={event => setEmail(event.target.value)}
                             value={email}
+                            className="block mt-1 w-full"
+                            onChange={event => setEmail(event.target.value)}
                             required
                             autoFocus
                         />
@@ -77,10 +77,10 @@ const Login = () => {
 
                         <Input
                             id="password"
-                            className="block mt-1 w-full"
                             type="password"
-                            onChange={event => setPassword(event.target.value)}
                             value={password}
+                            className="block mt-1 w-full"
+                            onChange={event => setPassword(event.target.value)}
                             required
                             autoComplete="current-password"
                         />
@@ -94,8 +94,8 @@ const Login = () => {
                             <input
                                 id="remember_me"
                                 type="checkbox"
-                                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 name="remember"
+                                className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                             />
 
                             <span className="ml-2 text-sm text-gray-600">

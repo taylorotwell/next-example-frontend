@@ -62,10 +62,10 @@ const PasswordReset = () => {
 
                         <Input
                             id="email"
-                            className="block mt-1 w-full"
                             type="email"
-                            onChange={event => setEmail(event.target.value)}
                             value={email}
+                            className="block mt-1 w-full"
+                            onChange={event => setEmail(event.target.value)}
                             required
                             autoFocus
                         />
@@ -76,10 +76,10 @@ const PasswordReset = () => {
                         <Label htmlFor="password">Password</Label>
                         <Input
                             id="password"
-                            className="block mt-1 w-full"
                             type="password"
-                            onChange={event => setPassword(event.target.value)}
                             value={password}
+                            className="block mt-1 w-full"
+                            onChange={event => setPassword(event.target.value)}
                             required
                         />
                     </div>
@@ -92,12 +92,12 @@ const PasswordReset = () => {
 
                         <Input
                             id="password_confirmation"
-                            className="block mt-1 w-full"
                             type="password"
+                            value={password_confirmation}
+                            className="block mt-1 w-full"
                             onChange={event =>
                                 setPasswordConfirmation(event.target.value)
                             }
-                            value={password_confirmation}
                             required
                         />
                     </div>

@@ -48,10 +48,10 @@ const Register = () => {
 
                         <Input
                             id="name"
-                            className="block mt-1 w-full"
                             type="text"
-                            onChange={event => setName(event.target.value)}
                             value={name}
+                            className="block mt-1 w-full"
+                            onChange={event => setName(event.target.value)}
                             required
                             autoFocus
                         />
@@ -63,10 +63,10 @@ const Register = () => {
 
                         <Input
                             id="email"
-                            className="block mt-1 w-full"
                             type="email"
-                            onChange={event => setEmail(event.target.value)}
                             value={email}
+                            className="block mt-1 w-full"
+                            onChange={event => setEmail(event.target.value)}
                             required
                         />
                     </div>
@@ -77,10 +77,10 @@ const Register = () => {
 
                         <Input
                             id="password"
-                            className="block mt-1 w-full"
                             type="password"
-                            onChange={event => setPassword(event.target.value)}
                             value={password}
+                            className="block mt-1 w-full"
+                            onChange={event => setPassword(event.target.value)}
                             required
                             autoComplete="new-password"
                         />
@@ -94,12 +94,12 @@ const Register = () => {
 
                         <Input
                             id="password_confirmation"
-                            className="block mt-1 w-full"
                             type="password"
+                            value={password_confirmation}
+                            className="block mt-1 w-full"
                             onChange={event =>
                                 setPasswordConfirmation(event.target.value)
                             }
-                            value={password_confirmation}
                             required
                         />
                     </div>
