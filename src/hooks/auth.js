@@ -37,8 +37,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const login = async ({ setErrors, setStatus, ...props }) => {
         await csrf()
 
-        setStatus(null)
         setErrors([])
+        setStatus(null)
 
         axios
             .post('/login', props)
@@ -53,8 +53,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const forgotPassword = async ({ setErrors, setStatus, email }) => {
         await csrf()
 
-        setStatus(null)
         setErrors([])
+        setStatus(null)
 
         axios
             .post('/forgot-password', { email })
@@ -69,8 +69,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const resetPassword = async ({ setErrors, setStatus, ...props }) => {
         await csrf()
 
-        setStatus(null)
         setErrors([])
+        setStatus(null)
 
         axios
             .post('/reset-password', { token: router.query.token, ...props })
