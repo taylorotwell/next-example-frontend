@@ -1,4 +1,4 @@
-const Label = ({ children, className, ...props }) => (
+const Label = ({ className, children, ...props }) => (
     <label
         className={`${className} block font-medium text-sm text-gray-700`}
         {...props}>
